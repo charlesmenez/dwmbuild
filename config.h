@@ -44,9 +44,8 @@ static const int lockfullscreen =
 static const Layout layouts[] = {
     /* symbol     arrange function */
     {"[@]", spiral},  {"[\\]", dwindle},
-    {"[]=", tile}, /* first entry is default */
+    {"[M]", monocle}, {"[]=", tile}, /* first entry is default */
     {"><>", NULL}, /* no layout function means floating behavior */
-    {"[M]", monocle},
 };
 
 /* key definitions */
@@ -98,6 +97,7 @@ static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY | ShiftMask, XK_f, fullscreen, {0}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},

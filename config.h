@@ -71,6 +71,9 @@ static const char *dmenucmd[] = {"dmenu_run", "-m",  dmenumon,       "-fn",
                                  normfgcolor, "-sb", selbordercolor, "-sf",
                                  selfgcolor,  NULL};
 static const char *termcmd[] = {"st", NULL};
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = {"st", "-t",     scratchpadname,
+                                      "-g", "120x34", NULL};
 
 /*
  * Xresources preferences to load at startup
@@ -98,6 +101,7 @@ static const Key keys[] = {
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
+    {MODKEY, XK_apostrophe, togglescratch, {.v = scratchpadcmd}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_d, incnmaster, {.i = -1}},
     {MODKEY, XK_h, setmfact, {.f = -0.05}},

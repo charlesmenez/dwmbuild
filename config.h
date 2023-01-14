@@ -97,7 +97,7 @@ static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
-    {MODKEY | ShiftMask, XK_f, fullscreen, {0}},
+    {MODKEY, XK_f, fullscreen, {0}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
@@ -109,11 +109,11 @@ static const Key keys[] = {
     {MODKEY, XK_space, zoom, {0}},
     {MODKEY, XK_Tab, view, {0}},
     {MODKEY | ShiftMask, XK_q, killclient, {0}},
-    {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
-    {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
+    {MODKEY | ControlMask, XK_t, setlayout, {.v = &layouts[0]}},
+    {MODKEY, XK_v, setlayout, {.v = &layouts[1]}},
+    {MODKEY, XK_c, setlayout, {.v = &layouts[2]}},
     {MODKEY, XK_z, setlayout, {.v = &layouts[3]}},
-    {MODKEY | ControlMask, XK_x, setlayout, {.v = &layouts[4]}},
+    {MODKEY, XK_x, setlayout, {.v = &layouts[4]}},
     {MODKEY, XK_Escape, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY, XK_0, view, {.ui = ~0}},
@@ -125,6 +125,64 @@ static const Key keys[] = {
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
             TAGKEYS(XK_9, 8){MODKEY, XK_q, quit, {0}},
+    {MODKEY, XK_r, spawn, {.v = (const char *[]){"st", "-e", "ranger", NULL}}},
+
+    {MODKEY | ShiftMask,
+     XK_r,
+     spawn,
+     {.v = (const char *[]){"st", "-e", "htop", NULL}}},
+
+    {MODKEY | ShiftMask,
+     XK_s,
+     spawn,
+     {.v = (const char *[]){"flameshot", "gui", NULL}}},
+
+    {MODKEY, XK_BackSpace, spawn, {.v = (const char *[]){"sysact", NULL}}},
+
+    {MODKEY | ShiftMask,
+     XK_d,
+     spawn,
+     {.v = (const char *[]){"keepassxc", NULL}}},
+
+    {MODKEY, XK_y, spawn, {.v = (const char *[]){"ytfzf", "-D", NULL}}},
+
+    {MODKEY | ControlMask,
+     XK_m,
+     spawn,
+     {.v = (const char *[]){"Dmenu-Streaming", NULL}}},
+
+    {MODKEY | ControlMask,
+     XK_y,
+     spawn,
+     {.v = (const char *[]){"st", "-e", "ytccf", "--no-thumbnails", NULL}}},
+
+    {MODKEY | ControlMask,
+     XK_b,
+     spawn,
+     {.v = (const char *[]){"bookmarks", NULL}}},
+
+    {MODKEY | ShiftMask,
+     XK_y,
+     spawn,
+     {.v = (const char *[]){"youtube-dmenu", NULL}}},
+
+    {MODKEY, XK_t, spawn, {.v = (const char *[]){"telegram-choice", NULL}}},
+
+    {MODKEY,
+     XK_m,
+     spawn,
+     {.v = (const char *[]){"st", "-e", "termusic", NULL}}},
+
+    {MODKEY | ShiftMask, XK_m, spawn, SHCMD("st -e pulsemixer")},
+
+    {MODKEY, XK_p, spawn, SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png")},
+
+    {MODKEY | ShiftMask,
+     XK_w,
+     spawn,
+     {.v = (const char *[]){"dwm-colors", NULL}}},
+
+    {MODKEY, XK_e, spawn, {.v = (const char *[]){"dmenu-emoji", NULL}}},
 };
 
 /* button definitions */

@@ -98,15 +98,17 @@ ResourcePref resources[] = {
     {"mfact", FLOAT, &mfact},
 };
 
+#include "selfrestart.c"
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
+    {MODKEY | ControlMask, XK_r, self_restart, {0}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_f, fullscreen, {0}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},
     {MODKEY, XK_k, focusstack, {.i = -1}},
-    {MODKEY, XK_apostrophe, togglescratch, {.v = scratchpadcmd}},
+    {MODKEY | ShiftMask, XK_Return, togglescratch, {.v = scratchpadcmd}},
     {MODKEY, XK_i, incnmaster, {.i = +1}},
     {MODKEY, XK_d, incnmaster, {.i = -1}},
     {MODKEY, XK_h, setmfact, {.f = -0.05}},

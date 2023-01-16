@@ -20,8 +20,17 @@ static char *colors[][3] = {
     /*               fg           bg           border   */
     [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
     [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
+    [SchemeTitle] = {normfgcolor, normbgcolor, normbordercolor},
+    [SchemeTitleSel] = {selfgcolor, selbgcolor, selbordercolor},
 };
 
+static const char *statuscolors[][3] = {
+    /*                   fg         bg         border   */
+    [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
+    [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
+    [SchemeTitle] = {normfgcolor, normbgcolor, normbordercolor},
+    [SchemeTitleSel] = {selfgcolor, selbgcolor, selbordercolor},
+};
 /* tagging */
 static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 

@@ -93,7 +93,7 @@ static const char *scratchpadcmd[] = {"st", "-t",     scratchpadname,
  */
 ResourcePref resources[] = {
     {"color0", STRING, &normbordercolor},
-    {"color14", STRING, &selbordercolor},
+    {"color4", STRING, &selbordercolor},
     {"color0", STRING, &normbgcolor},
     {"color4", STRING, &normfgcolor},
     {"color0", STRING, &selfgcolor},

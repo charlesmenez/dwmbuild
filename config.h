@@ -152,6 +152,7 @@ static const Key keys[] = {
      {.v = (const char *[]){"keepassxc", NULL}}},
 
     {MODKEY, XK_y, spawn, {.v = (const char *[]){"ytfzf", "-D", NULL}}},
+    {MODKEY, XK_w, spawn, {.v = (const char *[]){"firefox", NULL}}},
 
     {MODKEY | ControlMask,
      XK_m,

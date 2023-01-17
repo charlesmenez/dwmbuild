@@ -200,6 +200,11 @@ static const Key keys[] = {
      spawn,
      {.v = (const char *[]){"dwm-colors", NULL}}},
 
+    {MODKEY | ControlMask,
+     XK_s,
+     spawn,
+     {.v = (const char *[]){"Dmenu-Streaming", NULL}}},
+
     {MODKEY, XK_e, spawn, {.v = (const char *[]){"dmenu-emoji", NULL}}},
 };
 

@@ -161,6 +161,11 @@ static const Key keys[] = {
      spawn,
      {.v = (const char *[]){"keepassxc", NULL}}},
 
+    {MODKEY | ControlMask,
+     XK_l,
+     spawn,
+     {.v = (const char *[]){"st", "-e", "lvim", NULL}}},
+
     {MODKEY, XK_y, spawn, {.v = (const char *[]){"ytfzf", "-D", NULL}}},
     {MODKEY, XK_w, spawn, {.v = (const char *[]){"firefox", NULL}}},
 
@@ -178,6 +183,11 @@ static const Key keys[] = {
      XK_b,
      spawn,
      {.v = (const char *[]){"bookmarks", NULL}}},
+
+    {MODKEY | ShiftMask,
+     XK_b,
+     spawn,
+     {.v = (const char *[]){"addbookmark", NULL}}},
 
     {MODKEY | ShiftMask,
      XK_y,

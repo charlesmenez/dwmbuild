@@ -87,7 +87,6 @@ static const char *termcmd[] = {"st", NULL};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = {"st", "-t",     scratchpadname,
                                       "-g", "120x34", NULL};
-
 /*
  * Xresources preferences to load at startup
  */

@@ -195,6 +195,16 @@ static const Key keys[] = {
 
     {MODKEY, XK_t, spawn, {.v = (const char *[]){"telegram-choice", NULL}}},
 
+    {MODKEY | ControlMask,
+     XK_BackSpace,
+     spawn,
+     {.v = (const char *[]){"st", "-e", "radio", NULL}}},
+
+    {MODKEY | ShiftMask,
+     XK_BackSpace,
+     spawn,
+     {.v = (const char *[]){"flatpak-packages", NULL}}},
+
     {MODKEY,
      XK_m,
      spawn,

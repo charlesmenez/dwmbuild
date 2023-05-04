@@ -42,9 +42,11 @@ static const Rule rules[] = {
     /* class     instance  title           tags mask  isfloating  isterminal
        noswallow  monitor */
     {"Gimp", NULL, NULL, 0, 1, 0, 0, -1},
+    /* open Firefox on tag 2 */
     {"Firefox", NULL, NULL, 1 << 8, 0, 0, -1, -1},
     {"St", NULL, NULL, 0, 0, 1, 0, -1},
     {NULL, NULL, "Event Tester", 0, 0, 0, 1, -1}, /* xev */
+    {"mpv", NULL, NULL, 0, True, -1}, /* mpv opens in floating mode */
 };
 
 /* layout(s) */
@@ -155,10 +157,15 @@ static const Key keys[] = {
 
     {MODKEY, XK_BackSpace, spawn, {.v = (const char *[]){"sysact", NULL}}},
 
+    {MODKEY | ControlMask,
+     XK_k,
+     spawn,
+     {.v = (const char *[]){"keepassxc", NULL}}},
+
     {MODKEY | ShiftMask,
      XK_d,
      spawn,
-     {.v = (const char *[]){"keepassxc", NULL}}},
+     {.v = (const char *[]){"filefinder", NULL}}},
 
     {MODKEY | ControlMask,
      XK_l,
@@ -194,6 +201,11 @@ static const Key keys[] = {
      {.v = (const char *[]){"youtube-dmenu", NULL}}},
 
     {MODKEY, XK_t, spawn, {.v = (const char *[]){"telegram-choice", NULL}}},
+
+    {MODKEY | ControlMask,
+     XK_c,
+     spawn,
+     {.v = (const char *[]){"gptdmenu", NULL}}},
 
     {MODKEY | ControlMask,
      XK_BackSpace,
